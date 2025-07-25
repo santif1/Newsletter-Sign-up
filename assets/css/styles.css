@@ -1,0 +1,165 @@
+:root{
+    --red: hsl(4, 100%, 67%);
+    --blue800: hsl(234, 29%, 20%);
+    --blue700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%,58%);
+    --white: hsl(0, 0%, 100%);
+    --fontFamily: 'Roboto', 'san-serif';
+}
+
+body{
+    font-family: var(--fontFamily);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+#sign-up-form{
+    max-width: 375px;
+    box-shadow: 0 0 10px var(--grey);
+    border-radius: 10px;
+}
+
+.form-header {
+    width: 100%;
+    h1{
+        padding: 1rem;
+        padding-bottom: 0;
+        margin: 0;
+        color: var(--blue800);
+    }
+    .updates{
+        padding: 1rem;
+        padding-top: 0;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 0;
+    span {
+        padding-left: 1rem;
+    }
+    img {
+        align-self: flex-start;
+    }
+}
+
+.form-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.field-input {
+    height: 55px;
+    border-radius: 7px;
+    font-size: 15px;
+    border: 1px solid var(--grey);
+    padding-left: 1rem;    
+}
+
+.form-footer {
+    padding: 1rem;
+    text-align: center;
+    .subscribe-btn {
+        border: none;
+        background: var(--blue800);
+        color: var(--white);
+        height: 60px;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+}
+
+.attribution { 
+    font-size: 13px; text-align: center; 
+    a { 
+        text-decoration: none;
+        color: var(--blue800);
+        font-weight: 700; 
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #sign-up-form {
+        max-width: 768px;
+    }
+
+    .form-footer{
+        padding-bottom: 2rem;
+        .subscribe-btn{
+            height: 70px;
+        }
+    }
+}
+
+@media screen and (min-width:1140px) {
+    body{
+        background: var(--blue800);
+        min-height: 100vh;
+        justify-content: center;
+    }
+
+    #sign-up-form {
+        max-width: 1000px;
+        background: var(--white);
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1rem;
+        padding-bottom: 0;
+        box-shadow: none;
+        border-radius: 30px;
+    }
+
+    .form {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 2rem 1rem;
+    }
+
+    .form-header{
+        h1{
+            font-size: 4rem;
+            padding-left: 3rem;
+        }
+        .updates{
+            margin: auto 3rem;
+            font-size: 20px;
+        }
+    }
+
+    .form-body{
+        width: 80%;
+        padding-left: 3rem;
+    }
+
+    .form-footer{
+        width: 80%;
+        padding-left: 3rem;
+        .subscribe-btn{
+            height: 60px;
+        }
+    }
+
+    .attribution {
+        font-size: 1rem;
+        margin-top: 2rem;
+        color: var(--white);
+        a{
+            color: var(--white);
+        }
+    }
+
+}
