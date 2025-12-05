@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script defer src="script.js"></script>
 
   <title>Newsletter sign-up form</title>
 
@@ -42,15 +43,28 @@
           </div>
         </div>
         <div class="form-body">
-          <label for="email"><small><strong>Email address</strong></small></label>
+          <div class="header">
+            <label for="email"><small><strong>Email address</strong></small></label>
+            <span class="error-msg" aria-live="polite" id="name-error"></span>
+          </div>
           <input class="field-input" name="email" type="email" required placeholder="email@company.com">
-          <span aria-live="polite" id="name-error"></span>
         </div>
         <div class="form-footer">
-          <button class="subscribe-btn" type="submit">Subscribe to monthly newsletter</button>
+          <button id="subBtn" class="btn subscribe-btn" type="submit">Subscribe to monthly newsletter</button>
         </div>
       </section>
     </form>
+    <section class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-text">
+          <img src="./assets/images/icon-success.svg" alt="">
+          <h2>Thanks for subscribing!</h2>
+          <p>A confirmation email has been sent to <span class="user-email"> </span>. Please open it and click the button inside to confirm your subscription.</p>
+        </div>
+        <button class="btn btn-close">Dismiss message</button>
+      </div>
+    </section>
+    <div class="overlay hidden"></div>
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

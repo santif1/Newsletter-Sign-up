@@ -1,165 +1,270 @@
 :root{
     --red: hsl(4, 100%, 67%);
+    --light-red: hsl(4, 100%, 90%);
     --blue800: hsl(234, 29%, 20%);
     --blue700: hsl(235, 18%, 26%);
     --grey: hsl(0, 0%,58%);
     --white: hsl(0, 0%, 100%);
-    --fontFamily: 'Roboto', 'san-serif';
+    --fontFamily: 'Roboto', 'sans-serif';
 }
 
+/*MOBILE*/
+
 body{
-    font-family: var(--fontFamily);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    justify-content: center;
+    font-family: var(--fontFamily);
+    margin: 0;
     font-size: 1rem;
 }
 
 #sign-up-form{
-    max-width: 375px;
-    box-shadow: 0 0 10px var(--grey);
+    max-width: 400px;
     border-radius: 10px;
 }
 
-.form-header {
-    width: 100%;
-    h1{
-        padding: 1rem;
-        padding-bottom: 0;
-        margin: 0;
-        color: var(--blue800);
-    }
-    .updates{
-        padding: 1rem;
-        padding-top: 0;
-    }
+.form-header h1{
+    padding: 1rem;
+    padding-bottom: 0;
+    margin: 0;
+    color: var(--blue800);
 }
 
-.list {
+.updates{
+    padding: 0 1rem 1rem;
+}
+
+.list{
     display: flex;
-    flex-direction: row;
     padding: 0.5rem 0;
-    span {
-        padding-left: 1rem;
-    }
-    img {
-        align-self: flex-start;
-    }
 }
 
-.form-body {
+.list span{
+    padding-left: 1rem;
+}
+
+.form-body{
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-label {
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+label{
     margin-bottom: 0.5rem;
 }
 
-.field-input {
+.field-input{
     height: 55px;
     border-radius: 7px;
-    font-size: 15px;
     border: 1px solid var(--grey);
     padding-left: 1rem;    
 }
 
-.form-footer {
+.btn{
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    height: 50px; 
+    width: 100%
+}
+
+.form-footer{
     padding: 1rem;
+}
+
+.subscribe-btn{
+    background: var(--blue800);
+    color: var(--white);
+    height: 70px;
+    width: 100%;
+}
+
+.subscribe-btn:hover{
+    cursor: pointer;
+}
+
+.subscribe-btn.active{
+    background: linear-gradient(135deg, #ec343e, #ff8a65);
+}
+
+.error-msg{
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0.5rem;
+    align-self: flex-end;
+}
+
+.error{
+    border: 1px solid var(--red);
+    background-color: var(--light-red);
+}
+
+.attribution{
+    font-size: 13px;
     text-align: center;
-    .subscribe-btn {
-        border: none;
-        background: var(--blue800);
-        color: var(--white);
-        height: 60px;
-        width: 100%;
-        border-radius: 10px;
-        font-size: 15px;
-        font-weight: 700;
-    }
 }
 
-.attribution { 
-    font-size: 13px; text-align: center; 
-    a { 
-        text-decoration: none;
-        color: var(--blue800);
-        font-weight: 700; 
-    }
+.attribution a{
+    text-decoration: none;
+    color: var(--blue800);
+    font-weight: 700;
 }
 
-@media screen and (min-width: 768px) {
-    #sign-up-form {
+/*----MODAL----*/
+
+.modal{
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    background: white;
+    width: 100%;
+    height: 100vh;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.modal-content img{
+    width: 50px;
+}
+
+.modal-content h2{
+    font-size: 3rem;
+    color: var(--blue800);
+    margin: 1rem 0;
+}
+
+.modal-content p{
+    line-height: 1.5;
+}
+
+.btn-close{
+    background-color: var(--blue800);
+    color: var(--white);
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.user-email { font-weight: 700; }
+
+.hidden{
+    display: none;
+}
+
+/*TABLET*/
+
+@media (min-width: 768px){
+
+    #sign-up-form{
         max-width: 768px;
     }
 
-    .form-footer{
-        padding-bottom: 2rem;
-        .subscribe-btn{
-            height: 70px;
-        }
+    .subscribe-btn:hover{
+        cursor: pointer;
     }
+
+    .modal-content{
+        height: auto;
+        max-width: 420px;
+        border-radius: 15px;
+    }
+
 }
 
-@media screen and (min-width:1140px) {
+/*DESKTOP*/
+
+@media (min-width:1140px){
+
     body{
         background: var(--blue800);
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
-    #sign-up-form {
+    #sign-up-form{
         max-width: 1000px;
-        background: var(--white);
+        background: white;
         display: flex;
         flex-direction: row-reverse;
         padding: 1rem;
-        padding-bottom: 0;
-        box-shadow: none;
         border-radius: 30px;
     }
 
-    .form {
+    .form{
         width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
         margin: 2rem 1rem;
     }
 
-    .form-header{
-        h1{
-            font-size: 4rem;
-            padding-left: 3rem;
-        }
-        .updates{
-            margin: auto 3rem;
-            font-size: 20px;
-        }
-    }
-
-    .form-body{
-        width: 80%;
+    .form-header h1{
+        font-size: 4rem;
         padding-left: 3rem;
     }
 
+    .updates{
+        font-size: 20px;
+        margin: auto 3rem;
+    }
+
+    .form-body,
     .form-footer{
         width: 80%;
         padding-left: 3rem;
-        .subscribe-btn{
-            height: 60px;
-        }
     }
 
-    .attribution {
-        font-size: 1rem;
+    .attribution{
         margin-top: 2rem;
         color: var(--white);
-        a{
-            color: var(--white);
-        }
+        font-size: 1rem;
     }
 
+    .attribution a{
+        color: white;
+    }
+
+    .modal-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-text{
+        margin: 1rem;
+    }
+
+    .btn-close{
+        width: 90%;
+    }
+
+    .btn-close:hover{
+        cursor: pointer;
+        background: linear-gradient(135deg, #ec343e, #ff8a65);
+    }
 }
